@@ -1,0 +1,331 @@
+  0	  Preempt	         0	         0
+  2	 Complete	         0	         1
+  4	  Preempt	         1	         0
+  6	 Complete	         1	         2
+  7	  Preempt	         2	         0
+  8	 Complete	         0	         1
+ 10	  Preempt	         1	         0
+ 13	  Preempt	         2	         0
+ 14	 Complete	         0	         1
+ 16	  Preempt	         1	         0
+ 19	  Preempt	         2	         0
+ 20	 Complete	         0	         1
+ 22	  Preempt	         1	         0
+ 25	  Preempt	         2	         0
+ 26	 Complete	         0	         1
+ 28	  Preempt	         1	         0
+Task3 deadline
+ 30	 Complete	         1	         2
+ 31	  Preempt	         2	         0
+ 32	 Complete	         0	         1
+ 34	  Preempt	         1	         0
+ 37	  Preempt	         2	         0
+ 38	 Complete	         0	         1
+ 40	  Preempt	         1	         0
+ 43	  Preempt	         2	         0
+ 44	 Complete	         0	         1
+ 46	  Preempt	         1	         0
+ 49	  Preempt	         2	         0
+ 50	 Complete	         0	         1
+ 52	  Preempt	         1	         0
+Task3 deadline
+ 54	 Complete	         1	         2
+ 55	  Preempt	         2	         0
+ 56	 Complete	         0	         1
+ 58	  Preempt	         1	         0
+ 61	  Preempt	         2	         0
+ 62	 Complete	         0	         1
+ 64	  Preempt	         1	         0
+ 67	  Preempt	         2	         0
+ 68	 Complete	         0	         1
+ 70	  Preempt	         1	         0
+ 73	  Preempt	         2	         0
+ 74	 Complete	         0	         1
+ 76	  Preempt	         1	         0
+Task3 deadline
+ 78	 Complete	         1	         2
+ 79	  Preempt	         2	         0
+ 80	 Complete	         0	         1
+ 82	  Preempt	         1	         0
+ 85	  Preempt	         2	         0
+ 86	 Complete	         0	         1
+ 88	  Preempt	         1	         0
+ 91	  Preempt	         2	         0
+ 92	 Complete	         0	         1
+ 94	  Preempt	         1	         0
+ 97	  Preempt	         2	         0
+ 98	 Complete	         0	         1
+100	  Preempt	         1	         0
+Task3 deadline
+102	 Complete	         1	         2
+103	  Preempt	         2	         0
+104	 Complete	         0	         1
+106	  Preempt	         1	         0
+109	  Preempt	         2	         0
+110	 Complete	         0	         1
+112	  Preempt	         1	         0
+115	  Preempt	         2	         0
+116	 Complete	         0	         1
+118	  Preempt	         1	         0
+121	  Preempt	         2	         0
+122	 Complete	         0	         1
+124	  Preempt	         1	         0
+Task3 deadline
+126	 Complete	         1	         2
+127	  Preempt	         2	         0
+128	 Complete	         0	         1
+130	  Preempt	         1	         0
+133	  Preempt	         2	         0
+134	 Complete	         0	         1
+136	  Preempt	         1	         0
+139	  Preempt	         2	         0
+140	 Complete	         0	         1
+142	  Preempt	         1	         0
+145	  Preempt	         2	         0
+146	 Complete	         0	         1
+148	  Preempt	         1	         0
+Task3 deadline
+150	 Complete	         1	         2
+151	  Preempt	         2	         0
+152	 Complete	         0	         1
+154	  Preempt	         1	         0
+157	  Preempt	         2	         0
+158	 Complete	         0	         1
+160	  Preempt	         1	         0
+163	  Preempt	         2	         0
+164	 Complete	         0	         1
+166	  Preempt	         1	         0
+169	  Preempt	         2	         0
+170	 Complete	         0	         1
+172	  Preempt	         1	         0
+Task3 deadline
+174	 Complete	         1	         2
+175	  Preempt	         2	         0
+176	 Complete	         0	         1
+178	  Preempt	         1	         0
+181	  Preempt	         2	         0
+182	 Complete	         0	         1
+184	  Preempt	         1	         0
+187	  Preempt	         2	         0
+188	 Complete	         0	         1
+190	  Preempt	         1	         0
+193	  Preempt	         2	         0
+194	 Complete	         0	         1
+196	  Preempt	         1	         0
+Task3 deadline
+198	 Complete	         1	         2
+199	  Preempt	         2	         0
+200	 Complete	         0	         1
+202	  Preempt	         1	         0
+205	  Preempt	         2	         0
+206	 Complete	         0	         1
+208	  Preempt	         1	         0
+211	  Preempt	         2	         0
+212	 Complete	         0	         1
+214	  Preempt	         1	         0
+217	  Preempt	         2	         0
+218	 Complete	         0	         1
+220	  Preempt	         1	         0
+Task3 deadline
+222	 Complete	         1	         2
+223	  Preempt	         2	         0
+224	 Complete	         0	         1
+226	  Preempt	         1	         0
+229	  Preempt	         2	         0
+230	 Complete	         0	         1
+232	  Preempt	         1	         0
+235	  Preempt	         2	         0
+236	 Complete	         0	         1
+238	  Preempt	         1	         0
+241	  Preempt	         2	         0
+242	 Complete	         0	         1
+244	  Preempt	         1	         0
+Task3 deadline
+246	 Complete	         1	         2
+247	  Preempt	         2	         0
+248	 Complete	         0	         1
+250	  Preempt	         1	         0
+253	  Preempt	         2	         0
+254	 Complete	         0	         1
+256	  Preempt	         1	         0
+259	  Preempt	         2	         0
+260	 Complete	         0	         1
+262	  Preempt	         1	         0
+265	  Preempt	         2	         0
+266	 Complete	         0	         1
+268	  Preempt	         1	         0
+Task3 deadline
+270	 Complete	         1	         2
+271	  Preempt	         2	         0
+272	 Complete	         0	         1
+274	  Preempt	         1	         0
+277	  Preempt	         2	         0
+278	 Complete	         0	         1
+280	  Preempt	         1	         0
+283	  Preempt	         2	         0
+284	 Complete	         0	         1
+286	  Preempt	         1	         0
+289	  Preempt	         2	         0
+290	 Complete	         0	         1
+292	  Preempt	         1	         0
+Task3 deadline
+294	 Complete	         1	         2
+295	  Preempt	         2	         0
+296	 Complete	         0	         1
+298	  Preempt	         1	         0
+301	  Preempt	         2	         0
+302	 Complete	         0	         1
+304	  Preempt	         1	         0
+307	  Preempt	         2	         0
+308	 Complete	         0	         1
+310	  Preempt	         1	         0
+313	  Preempt	         2	         0
+314	 Complete	         0	         1
+316	  Preempt	         1	         0
+Task3 deadline
+318	 Complete	         1	         2
+319	  Preempt	         2	         0
+320	 Complete	         0	         1
+322	  Preempt	         1	         0
+325	  Preempt	         2	         0
+326	 Complete	         0	         1
+328	  Preempt	         1	         0
+331	  Preempt	         2	         0
+332	 Complete	         0	         1
+334	  Preempt	         1	         0
+337	  Preempt	         2	         0
+338	 Complete	         0	         1
+340	  Preempt	         1	         0
+Task3 deadline
+342	 Complete	         1	         2
+343	  Preempt	         2	         0
+344	 Complete	         0	         1
+346	  Preempt	         1	         0
+349	  Preempt	         2	         0
+350	 Complete	         0	         1
+352	  Preempt	         1	         0
+355	  Preempt	         2	         0
+356	 Complete	         0	         1
+358	  Preempt	         1	         0
+361	  Preempt	         2	         0
+362	 Complete	         0	         1
+364	  Preempt	         1	         0
+Task3 deadline
+366	 Complete	         1	         2
+367	  Preempt	         2	         0
+368	 Complete	         0	         1
+370	  Preempt	         1	         0
+373	  Preempt	         2	         0
+374	 Complete	         0	         1
+376	  Preempt	         1	         0
+379	  Preempt	         2	         0
+380	 Complete	         0	         1
+382	  Preempt	         1	         0
+385	  Preempt	         2	         0
+386	 Complete	         0	         1
+388	  Preempt	         1	         0
+Task3 deadline
+390	 Complete	         1	         2
+391	  Preempt	         2	         0
+392	 Complete	         0	         1
+394	  Preempt	         1	         0
+397	  Preempt	         2	         0
+398	 Complete	         0	         1
+400	  Preempt	         1	         0
+403	  Preempt	         2	         0
+404	 Complete	         0	         1
+406	  Preempt	         1	         0
+409	  Preempt	         2	         0
+410	 Complete	         0	         1
+412	  Preempt	         1	         0
+Task3 deadline
+414	 Complete	         1	         2
+415	  Preempt	         2	         0
+416	 Complete	         0	         1
+418	  Preempt	         1	         0
+421	  Preempt	         2	         0
+422	 Complete	         0	         1
+424	  Preempt	         1	         0
+427	  Preempt	         2	         0
+428	 Complete	         0	         1
+430	  Preempt	         1	         0
+433	  Preempt	         2	         0
+434	 Complete	         0	         1
+436	  Preempt	         1	         0
+Task3 deadline
+438	 Complete	         1	         2
+439	  Preempt	         2	         0
+440	 Complete	         0	         1
+442	  Preempt	         1	         0
+445	  Preempt	         2	         0
+446	 Complete	         0	         1
+448	  Preempt	         1	         0
+451	  Preempt	         2	         0
+452	 Complete	         0	         1
+454	  Preempt	         1	         0
+457	  Preempt	         2	         0
+458	 Complete	         0	         1
+460	  Preempt	         1	         0
+Task3 deadline
+462	 Complete	         1	         2
+463	  Preempt	         2	         0
+464	 Complete	         0	         1
+466	  Preempt	         1	         0
+469	  Preempt	         2	         0
+470	 Complete	         0	         1
+472	  Preempt	         1	         0
+475	  Preempt	         2	         0
+476	 Complete	         0	         1
+478	  Preempt	         1	         0
+481	  Preempt	         2	         0
+482	 Complete	         0	         1
+484	  Preempt	         1	         0
+Task3 deadline
+486	 Complete	         1	         2
+487	  Preempt	         2	         0
+488	 Complete	         0	         1
+490	  Preempt	         1	         0
+493	  Preempt	         2	         0
+494	 Complete	         0	         1
+496	  Preempt	         1	         0
+499	  Preempt	         2	         0
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
+Task3 deadline
