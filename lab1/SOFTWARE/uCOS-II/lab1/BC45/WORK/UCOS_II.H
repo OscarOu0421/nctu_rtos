@@ -411,13 +411,7 @@ typedef struct os_tcb {
     
     int compTime;
     int period;
-    struct printbuf{
-        INT32U TimeTick;
-        int event;              /* preempt:1, complete:2    */   
-        INT8U FromTaskPrio;
-        INT8U ToTaskPrio;
-    }PrintBuf;
-
+    char buf[50];
 } OS_TCB;
 
 /*$PAGE*/

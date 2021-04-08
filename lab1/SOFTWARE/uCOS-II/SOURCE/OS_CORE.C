@@ -187,10 +187,8 @@ void  OSIntExit (void)
             if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy */
                 OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy];
 
-                OSTCBHighRdy->PrintBuf.TimeTick = OSTimeGet();
-                OSTCBHighRdy->PrintBuf.event = 1;
-                OSTCBHighRdy->PrintBuf.FromTaskPrio = OSPrioCur;
-                OSTCBHighRdy->PrintBuf.ToTaskPrio = OSPrioHighRdy;
+                sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
+                puts(OSTCBHighRdy->buf);
 
                 OSCtxSwCtr++;                              /* Keep track of the number of ctx switches */
                 OSIntCtxSw();                              /* Perform interrupt level ctx switch       */
@@ -310,10 +308,8 @@ void  OSStart (void)
         OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy]; /* Point to highest priority task ready to run    */
         OSTCBCur      = OSTCBHighRdy;
 
-        // OSTCBHighRdy->PrintBuf.TimeTick = OSTimeGet();
-        // OSTCBHighRdy->PrintBuf.event = 1;
-        // OSTCBHighRdy->PrintBuf.FromTaskPrio = OSPrioCur;
-        // OSTCBHighRdy->PrintBuf.ToTaskPrio = OSPrioHighRdy;
+        sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
+        puts(OSTCBHighRdy->buf);
 
         OSStartHighRdy();                            /* Execute target specific code to start task     */
     }
@@ -897,11 +893,8 @@ void  OS_Sched (void)
         if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy     */
             OSTCBHighRdy = OSTCBPrioTbl[OSPrioHighRdy];
             
-            OSTCBHighRdy->PrintBuf.TimeTick = OSTimeGet();
-            OSTCBHighRdy->PrintBuf.event = 2;
-            OSTCBHighRdy->PrintBuf.FromTaskPrio = OSPrioCur;
-            OSTCBHighRdy->PrintBuf.ToTaskPrio = OSPrioHighRdy;
-            // printf("%d Complete %d %d\n", OSTCBHighRdy->PrintBuf.TimeTick, OSTCBHighRdy->PrintBuf.FromTaskPrio, OSTCBHighRdy->PrintBuf.ToTaskPrio);
+            sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Complete", OSPrioCur, OSPrioHighRdy);
+            puts(OSTCBHighRdy->buf);
 
             OSCtxSwCtr++;                              /* Increment context switch counter             */
             OS_TASK_SW();                              /* Perform a context switch                     */

@@ -39,6 +39,7 @@ OS_STK        TaskStk[N_TASKS][TASK_STK_SIZE];        /* Tasks stacks           
         void  Task2(void *data);                      /* Function prototypes of tasks                  */
         void  Task3(void *data);
 static  void  TaskStartCreateTasks(void);
+        void  Print(void);
 
 /*$PAGE*/
 /*
@@ -102,16 +103,8 @@ void  Task1 (void *pdata)
     OSTCBCur->compTime = 1;
     OSTCBCur->period = 3;
     while(1){
+        // Print();
 
-        if(OSTimeGet()<500){
-            // printf("Task%d ",1);
-            printf("%3d\t", OSTCBCur->PrintBuf.TimeTick);
-            if(OSTCBCur->PrintBuf.event==1)
-                printf("%10s", "Preempt\t");
-            else    
-                printf("%10s", "Complete\t");
-            printf("%10d\t%10d\n", OSTCBCur->PrintBuf.FromTaskPrio, OSTCBCur->PrintBuf.ToTaskPrio);
-        }
         while(OSTCBCur->compTime>0){}
 
         end = OSTimeGet();
@@ -139,16 +132,8 @@ void  Task2 (void *pdata)
     OSTCBCur->compTime = 3;
     OSTCBCur->period = 6;
     while(1){
+        // Print();
 
-        if(OSTimeGet()<500){
-            // printf("Task%d ",2);
-            printf("%3lu\t", OSTCBCur->PrintBuf.TimeTick);
-            if(OSTCBCur->PrintBuf.event==1)
-                printf("%10s", "Preempt\t");
-            else    
-                printf("%10s", "Complete\t");
-            printf("%10hhu\t%10hhu\n", OSTCBCur->PrintBuf.FromTaskPrio, OSTCBCur->PrintBuf.ToTaskPrio);
-        }
         while(OSTCBCur->compTime>0){}
 
         end = OSTimeGet();
@@ -171,16 +156,8 @@ void  Task3 (void *pdata)
     OSTCBCur->compTime = 4;
     OSTCBCur->period = 9;
     while(1){
+        // Print();
 
-        if(OSTimeGet()<500){
-            // printf("Task%d ",2);
-            printf("%3lu\t", OSTCBCur->PrintBuf.TimeTick);
-            if(OSTCBCur->PrintBuf.event==1)
-                printf("%10s", "Preempt\t");
-            else    
-                printf("%10s", "Complete\t");
-            printf("%10hhu\t%10hhu\n", OSTCBCur->PrintBuf.FromTaskPrio, OSTCBCur->PrintBuf.ToTaskPrio);
-        }
         while(OSTCBCur->compTime>0){}
 
         end = OSTimeGet();
@@ -194,4 +171,7 @@ void  Task3 (void *pdata)
             OSTimeDly(toDelay);
         }
     }
+}
+void Print(void){
+    printf("%s", OSTCBCur->buf);
 }
