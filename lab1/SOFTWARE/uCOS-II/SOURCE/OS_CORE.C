@@ -174,7 +174,7 @@ void  OSIntExit (void)
 #if OS_CRITICAL_METHOD == 3                                /* Allocate storage for CPU status register */
     OS_CPU_SR  cpu_sr;
 #endif
-    
+    OS_TCB *ptcb;
     
     if (OSRunning == TRUE) {
         OS_ENTER_CRITICAL();
@@ -184,15 +184,26 @@ void  OSIntExit (void)
         if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Reschedule only if all ISRs complete ... */
             OSIntExitY    = OSUnMapTbl[OSRdyGrp];          /* ... and not locked.                      */
             OSPrioHighRdy = (INT8U)((OSIntExitY << 3) + OSUnMapTbl[OSRdyTbl[OSIntExitY]]);
+
+            ptcb = OSTCBList;
+            puts("-----In OSIntExit------\n");
+            while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
+                if(ptcb->OSTCBStat==OS_STAT_RDY){
+                    sprintf(ptcb->buf, "Priority:%d\tOSTCBDly:%d\n", ptcb->OSTCBPrio, ptcb->OSTCBDly);
+                    puts(ptcb->buf);
+                }
+                ptcb = ptcb->OSTCBNext;
+            }
             if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy */
                 OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy];
 
-                sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
+                sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
                 puts(OSTCBHighRdy->buf);
 
                 OSCtxSwCtr++;                              /* Keep track of the number of ctx switches */
                 OSIntCtxSw();                              /* Perform interrupt level ctx switch       */
             }
+            puts("-----------------------\n");
         }
         OS_EXIT_CRITICAL();
     }
@@ -298,6 +309,7 @@ void  OSStart (void)
 {
     INT8U y;
     INT8U x;
+    OS_TCB *ptcb;
 
 
     if (OSRunning == FALSE) {
@@ -308,8 +320,19 @@ void  OSStart (void)
         OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy]; /* Point to highest priority task ready to run    */
         OSTCBCur      = OSTCBHighRdy;
 
-        sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
+        puts("------In OSStart-------\n");
+        ptcb = OSTCBList;
+        while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
+            if(ptcb->OSTCBStat==OS_STAT_RDY){
+                sprintf(ptcb->buf, "Priority:%d\tOSTCBDly:%d\n", ptcb->OSTCBPrio, ptcb->OSTCBDly);
+                puts(ptcb->buf);
+            }
+            ptcb = ptcb->OSTCBNext;
+        }
+
+        sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
         puts(OSTCBHighRdy->buf);
+        puts("-----------------------\n");
 
         OSStartHighRdy();                            /* Execute target specific code to start task     */
     }
@@ -884,21 +907,34 @@ void  OS_Sched (void)
     OS_CPU_SR  cpu_sr;
 #endif    
     INT8U      y;
+    OS_TCB *ptcb;
 
 
     OS_ENTER_CRITICAL();
     if ((OSIntNesting == 0) && (OSLockNesting == 0)) { /* Sched. only if all ISRs done & not locked    */
         y             = OSUnMapTbl[OSRdyGrp];          /* Get pointer to HPT ready to run              */
         OSPrioHighRdy = (INT8U)((y << 3) + OSUnMapTbl[OSRdyTbl[y]]);
+
+        ptcb = OSTCBList;
+        puts("-------In OS_Sched-----\n");
+        while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
+            if(ptcb->OSTCBStat==OS_STAT_RDY){
+                sprintf(ptcb->buf, "Priority:%d\tTCBDly:%d\n", ptcb->OSTCBPrio, ptcb->OSTCBDly);
+                puts(ptcb->buf);
+            }
+            ptcb = ptcb->OSTCBNext;
+        }
+
         if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy     */
             OSTCBHighRdy = OSTCBPrioTbl[OSPrioHighRdy];
             
-            sprintf(OSTCBHighRdy->buf, "%10lu\t%s\t%10hhu\t%10hhu\n", OSTimeGet(), "Complete", OSPrioCur, OSPrioHighRdy);
+            sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Complete", OSPrioCur, OSPrioHighRdy);
             puts(OSTCBHighRdy->buf);
 
             OSCtxSwCtr++;                              /* Increment context switch counter             */
             OS_TASK_SW();                              /* Perform a context switch                     */
         }
+        puts("----------------------\n");
     }
     OS_EXIT_CRITICAL();
 }

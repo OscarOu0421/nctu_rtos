@@ -19,7 +19,7 @@
 */
 
 #define  TASK_STK_SIZE                 512       /* Size of each task's stacks (# of WORDs)            */
-#define  N_TASKS                        3        /* Number of identical tasks                          */
+#define  N_TASKS                       3        /* Number of identical tasks                          */
 
 /*
 *********************************************************************************************************
@@ -28,6 +28,7 @@
 */
 
 OS_STK        TaskStk[N_TASKS][TASK_STK_SIZE];        /* Tasks stacks                                  */
+OS_TCB        *ptcb;
 
 /*
 *********************************************************************************************************
@@ -38,8 +39,8 @@ OS_STK        TaskStk[N_TASKS][TASK_STK_SIZE];        /* Tasks stacks           
         void  Task1(void *data); 
         void  Task2(void *data);                      /* Function prototypes of tasks                  */
         void  Task3(void *data);
-static  void  TaskStartCreateTasks(void);
         void  Print(void);
+        void  ArgumentSet(void);
 
 /*$PAGE*/
 /*
@@ -57,23 +58,14 @@ void  main (void)
     PC_DOSSaveReturn();                                    /* Save environment to return to DOS        */
     PC_VectSet(uCOS, OSCtxSw);                             /* Install uC/OS-II's context switch vector */
 
-    OSTaskCreate(Task1, (void *)0, &TaskStk[0][TASK_STK_SIZE - 1], 0);
+    OSTaskCreate(Task1, (void *)0, &TaskStk[0][TASK_STK_SIZE - 1], 1);
+    OSTaskCreate(Task2, (void *)0, &TaskStk[1][TASK_STK_SIZE - 1], 2);
+    OSTaskCreate(Task3, (void *)0, &TaskStk[2][TASK_STK_SIZE - 1], 3); 
+    ArgumentSet(); 
 
     OSStart();                                             /* Start multitasking                       */
 }
 /*$PAGE*/
-/*
-*********************************************************************************************************
-*                                             CREATE TASKS
-*********************************************************************************************************
-*/
-
-static  void  TaskStartCreateTasks (void)
-{
-    OSTaskCreate(Task2, (void *)0, &TaskStk[1][TASK_STK_SIZE - 1], 1);
-    OSTaskCreate(Task3, (void *)0, &TaskStk[2][TASK_STK_SIZE - 1], 2);  
-}
-
 /*
 *********************************************************************************************************
 *                                                  TASKS
@@ -89,89 +81,119 @@ void  Task1 (void *pdata)
     INT16S     key;
     int start;      /*the start time    */
     int end;        /*the end time      */
+    int arrive;     /*  arrive time   */
     int toDelay;
+    pdata = pdata;
+    arrive = 0;
 
     OS_ENTER_CRITICAL();
     PC_VectSet(0x08, OSTickISR);                           /* Install uC/OS-II's clock tick ISR        */
     PC_SetTickRate(1u);                      /* Reprogram tick rate                      */
     OS_EXIT_CRITICAL();
 
-    TaskStartCreateTasks();
-
-    pdata = pdata;
-    start = OSTimeGet();
-    OSTCBCur->compTime = 1;
-    OSTCBCur->period = 3;
     while(1){
-        // Print();
-
-        while(OSTCBCur->compTime>0){}
-
-        end = OSTimeGet();
-        toDelay = (OSTCBCur->period) - (end-start);
-        if(toDelay<0)
-            printf("Task1 deadline\n");
-        start += OSTCBCur->period;
-        OSTCBCur->compTime = 1;
-
         if (PC_GetKey(&key) == TRUE) {                     /* See if key has been pressed              */
             if (key == 0x1B) {                             /* Yes, see if it's the ESCAPE key          */
                 PC_DOSReturn();                            /* Return to DOS                            */
             }
         }
-        OSTimeDly(toDelay);
+        // Print();
+
+        start = OSTimeGet();
+        while(OSTCBCur->compTime>0){}
+
+        OS_ENTER_CRITICAL();
+        end = OSTimeGet();
+        toDelay = (OSTCBCur->period) - (end-arrive);
+        printf("Task1: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        arrive += OSTCBCur->period;
+
+        OSTCBCur->compTime = 1;
+
+        if(toDelay<0)
+            printf("Task1 deadline\n");
+        else
+            OSTimeDly(toDelay);
+        OS_EXIT_CRITICAL();
     }
 }
 void  Task2 (void *pdata)
 {
-    int start;      /*the start time    */
-    int end;        /*the end time      */
+    int start;      /*  start time      */
+    int end;        /*  end time        */
+    int arrive;     /*  arrive time     */
     int toDelay;
     pdata = pdata;
-    start = OSTimeGet();
-    OSTCBCur->compTime = 3;
-    OSTCBCur->period = 6;
+    arrive = 0;
     while(1){
         // Print();
 
+        start = OSTimeGet();
         while(OSTCBCur->compTime>0){}
 
+        OS_ENTER_CRITICAL();
         end = OSTimeGet();
-        toDelay = (OSTCBCur->period) - (end-start);
-        if(toDelay<0)
-            printf("Task2 deadline\n");
-        start += OSTCBCur->period;
+        toDelay = (OSTCBCur->period) - (end-arrive);
+        printf("Task2: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        arrive += OSTCBCur->period;
+
         OSTCBCur->compTime = 3;
 
-        OSTimeDly(toDelay);
+        if(toDelay<0)
+            printf("Task2 deadline\n");
+        else
+            OSTimeDly(toDelay);
+        OS_EXIT_CRITICAL();
     }
 }
 void  Task3 (void *pdata)
 {
-    int start;      /*the start time    */
-    int end;        /*the end time      */
+    int start;      /*  start time      */
+    int end;        /*  end time        */
+    int arrive;     /*  arrive time     */
     int toDelay;
     pdata = pdata;
-    start = OSTimeGet();
-    OSTCBCur->compTime = 4;
-    OSTCBCur->period = 9;
+    arrive = 0;
     while(1){
         // Print();
 
+        start = OSTimeGet();
         while(OSTCBCur->compTime>0){}
 
+        OS_ENTER_CRITICAL();
         end = OSTimeGet();
-        toDelay = (OSTCBCur->period) - (end-start);
-        start += OSTCBCur->period;
-        OSTCBCur->compTime = 4;
-        if(toDelay<0){
+        toDelay = (OSTCBCur->period) - (end-arrive);
+        printf("Task3: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        arrive += OSTCBCur->period;
+
+        OSTCBCur->compTime = 3;
+
+        if(toDelay<0)
             printf("Task3 deadline\n");
-        }
-        else{
+        else
             OSTimeDly(toDelay);
-        }
+        OS_EXIT_CRITICAL();
     }
 }
 void Print(void){
     printf("%s", OSTCBCur->buf);
+}
+void ArgumentSet(void){
+    ptcb = OSTCBList;
+    while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
+        printf("Priority: %d set argument\n", ptcb->OSTCBPrio);
+        if(ptcb->OSTCBPrio==1){
+            ptcb->compTime = 1;
+            ptcb->period = 3;
+        }
+        else if(ptcb->OSTCBPrio==2){
+            ptcb->compTime = 3;
+            ptcb->period = 6;
+        }
+        else if(ptcb->OSTCBPrio==3){
+            ptcb->compTime = 4;
+            ptcb->period = 9;
+        }
+        ptcb = ptcb->OSTCBNext;
+    }
 }

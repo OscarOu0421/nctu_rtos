@@ -1,0 +1,2801 @@
+Priority: 3 set argument
+Priority: 2 set argument
+Priority: 1 set argument
+------In OSStart-------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+0	Preempt	1	1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:0	start:1	end:1	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+1	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+3	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:3	start:3	end:4	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+4	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:0	start:1	end:5	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+5	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+6	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:6	start:6	end:7	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+7	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+9	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:9	start:9	end:10	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+10	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:6	start:7	end:11	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+11	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+12	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:12	start:12	end:13	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+13	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+15	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:15	start:15	end:16	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+16	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:12	start:13	end:17	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+17	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+18	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:18	start:18	end:19	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+19	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+21	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:21	start:21	end:22	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+22	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:18	start:19	end:23	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+23	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+24	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:24	start:24	end:25	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+25	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+27	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:27	start:27	end:28	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+28	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:24	start:25	end:29	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+29	Complete	2	3
+
+Task3: arrive:0	start:5	end:29	delay:-20
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+30	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:30	start:30	end:31	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+31	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+33	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:33	start:33	end:34	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+34	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:30	start:31	end:35	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+35	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+36	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:36	start:36	end:37	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+37	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+39	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:39	start:39	end:40	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+40	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:36	start:37	end:41	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+41	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+42	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:42	start:42	end:43	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+43	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+45	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:45	start:45	end:46	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+46	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:42	start:43	end:47	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+47	Complete	2	3
+
+Task3: arrive:9	start:29	end:47	delay:-29
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+48	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:48	start:48	end:49	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+49	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+51	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:51	start:51	end:52	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+52	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:48	start:49	end:53	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+53	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+54	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:54	start:54	end:55	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+55	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+57	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:57	start:57	end:58	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+58	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:54	start:55	end:59	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+59	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+60	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:60	start:60	end:61	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+61	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+63	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:63	start:63	end:64	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+64	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:60	start:61	end:65	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+65	Complete	2	3
+
+Task3: arrive:18	start:47	end:65	delay:-38
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+66	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:66	start:66	end:67	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+67	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+69	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:69	start:69	end:70	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+70	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:66	start:67	end:71	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+71	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+72	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:72	start:72	end:73	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+73	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+75	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:75	start:75	end:76	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+76	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:72	start:73	end:77	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+77	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+78	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:78	start:78	end:79	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+79	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+81	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:81	start:81	end:82	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+82	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:78	start:79	end:83	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+83	Complete	2	3
+
+Task3: arrive:27	start:65	end:83	delay:-47
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+84	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:84	start:84	end:85	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+85	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+87	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:87	start:87	end:88	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+88	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:84	start:85	end:89	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+89	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+90	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:90	start:90	end:91	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+91	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+93	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:93	start:93	end:94	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+94	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:90	start:91	end:95	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+95	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+96	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:96	start:96	end:97	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+97	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+99	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:99	start:99	end:100	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+100	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:96	start:97	end:101	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+101	Complete	2	3
+
+Task3: arrive:36	start:83	end:101	delay:-56
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+102	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:102	start:102	end:103	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+103	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+105	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:105	start:105	end:106	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+106	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:102	start:103	end:107	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+107	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+108	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:108	start:108	end:109	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+109	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+111	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:111	start:111	end:112	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+112	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:108	start:109	end:113	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+113	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+114	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:114	start:114	end:115	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+115	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+117	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:117	start:117	end:118	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+118	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:114	start:115	end:119	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+119	Complete	2	3
+
+Task3: arrive:45	start:101	end:119	delay:-65
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+120	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:120	start:120	end:121	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+121	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+123	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:123	start:123	end:124	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+124	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:120	start:121	end:125	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+125	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+126	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:126	start:126	end:127	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+127	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+129	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:129	start:129	end:130	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+130	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:126	start:127	end:131	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+131	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+132	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:132	start:132	end:133	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+133	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+135	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:135	start:135	end:136	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+136	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:132	start:133	end:137	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+137	Complete	2	3
+
+Task3: arrive:54	start:119	end:137	delay:-74
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+138	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:138	start:138	end:139	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+139	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+141	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:141	start:141	end:142	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+142	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:138	start:139	end:143	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+143	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+144	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:144	start:144	end:145	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+145	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+147	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:147	start:147	end:148	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+148	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:144	start:145	end:149	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+149	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+150	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:150	start:150	end:151	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+151	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+153	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:153	start:153	end:154	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+154	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:150	start:151	end:155	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+155	Complete	2	3
+
+Task3: arrive:63	start:137	end:155	delay:-83
+Task3 deadline
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+156	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:156	start:156	end:157	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+157	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+159	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:159	start:159	end:160	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+160	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:156	start:157	end:161	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+161	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+162	Preempt	3	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:162	start:162	end:163	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+163	Complete	1	2
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+165	Preempt	2	1
+
+----------------------
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+-----------------------
+
+Task1: arrive:165	start:165	end:166	delay:2
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:0
+
+Priority:1	TCBDly:2
+
+166	Complete	1	2
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:1
+
+-----------------------
+
+Task2: arrive:162	start:163	end:167	delay:1
+-------In OS_Sched-----
+
+Priority:3	TCBDly:0
+
+Priority:2	TCBDly:1
+
+Priority:1	TCBDly:1
+
+167	Complete	2	3
+
+-----In OSIntExit------
+
+Priority:3	OSTCBDly:0
+
+Priority:2	OSTCBDly:0
+
+Priority:1	OSTCBDly:0
+
+168	Preempt	3	1
+
+----------------------
+
