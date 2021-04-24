@@ -189,13 +189,11 @@ void  OSIntExit (void)
             ptcb = OSTCBList;
             minDeadline = 2000;
             OSPrioHighRdy = OS_IDLE_PRIO;
-            puts("-----In OSIntExit------\n");
+            // puts("-----In OSIntExit------\n");
             while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
                 if(ptcb->OSTCBStat==OS_STAT_RDY && !ptcb->OSTCBDly && ptcb->deadline<minDeadline){
                     minDeadline = ptcb->deadline;
                     OSPrioHighRdy = ptcb->OSTCBPrio;
-                    sprintf(ptcb->buf, "Priority:%d\tDeadline:%d\tOSTCBDly:%d\n", OSPrioHighRdy, ptcb->deadline, ptcb->OSTCBDly);
-                    puts(ptcb->buf);
                 }
                 ptcb = ptcb->OSTCBNext;
             }
@@ -203,13 +201,16 @@ void  OSIntExit (void)
             if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy */
                 OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy];
 
-                sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
-                puts(OSTCBHighRdy->buf);
+                buf[pos][0] = OSTimeGet();
+                buf[pos][1] = 0;
+                buf[pos][2] = OSPrioCur;
+                buf[pos][3] = OSPrioHighRdy;
+                pos = (pos+1)==row_size ? 0 : pos+1;
 
                 OSCtxSwCtr++;                              /* Keep track of the number of ctx switches */
                 OSIntCtxSw();                              /* Perform interrupt level ctx switch       */
             }
-            puts("-----------------------\n");
+            // puts("-----------------------\n");
         }
         OS_EXIT_CRITICAL();
     }
@@ -327,24 +328,27 @@ void  OSStart (void)
         minDeadline = 2000;
         ptcb = OSTCBList;
         OSPrioHighRdy = OS_IDLE_PRIO;
-        puts("------In OSStart-------\n");
+        // puts("------In OSStart-------\n");
         while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
             if(ptcb->OSTCBStat==OS_STAT_RDY && ptcb->deadline<minDeadline){
                 minDeadline = ptcb->deadline;
                 OSPrioHighRdy = ptcb->OSTCBPrio;
-                sprintf(ptcb->buf, "Priority:%d\tDeadline:%d\n", OSPrioHighRdy, ptcb->deadline);
-                puts(ptcb->buf);
             }
             ptcb = ptcb->OSTCBNext;
         }
+        buf[pos][0] = OSTimeGet();
+        buf[pos][1] = 0;
+        buf[pos][2] = OSPrioCur;
+        buf[pos][3] = OSPrioHighRdy;
+        pos = (pos+1)==row_size ? 0 : pos+1;
 
         OSPrioCur     = OSPrioHighRdy;
         OSTCBHighRdy  = OSTCBPrioTbl[OSPrioHighRdy]; /* Point to highest priority task ready to run    */
         OSTCBCur      = OSTCBHighRdy;
 
-        sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
-        puts(OSTCBHighRdy->buf);
-        puts("-----------------------\n");
+        // sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Preempt", OSPrioCur, OSPrioHighRdy);
+        // puts(OSTCBHighRdy->buf);
+        // puts("-----------------------\n");
 
         OSStartHighRdy();                            /* Execute target specific code to start task     */
     }
@@ -930,26 +934,28 @@ void  OS_Sched (void)
         minDeadline = 2000;
         ptcb = OSTCBList;
         OSPrioHighRdy = OS_IDLE_PRIO;
-        puts("-------In OS_Sched-----\n");
+        // puts("-------In OS_Sched-----\n");
         while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
             if(ptcb->OSTCBStat==OS_STAT_RDY && !ptcb->OSTCBDly && ptcb->deadline<minDeadline){
                 minDeadline = ptcb->deadline;
                 OSPrioHighRdy = ptcb->OSTCBPrio;
-                sprintf(ptcb->buf, "Priority:%d\tDeadline:%d\tTCBDly:%d\n", OSPrioHighRdy, ptcb->deadline, ptcb->OSTCBDly);
-                puts(ptcb->buf);
             }
             ptcb = ptcb->OSTCBNext;
         }
         if (OSPrioHighRdy != OSPrioCur) {              /* No Ctx Sw if current task is highest rdy     */
             OSTCBHighRdy = OSTCBPrioTbl[OSPrioHighRdy];
             
-            sprintf(OSTCBHighRdy->buf, "%lu\t%s\t%hhu\t%hhu\n", OSTimeGet(), "Complete", OSPrioCur, OSPrioHighRdy);
-            puts(OSTCBHighRdy->buf);
-
+            buf[pos][0] = OSTimeGet();
+            buf[pos][1] = 1;
+            buf[pos][2] = OSPrioCur;
+            buf[pos][3] = OSPrioHighRdy;
+            pos = (pos+1)==row_size ? 0 : pos+1;
+            // puts("----------------------\n");
+            
             OSCtxSwCtr++;                              /* Increment context switch counter             */
             OS_TASK_SW();                              /* Perform a context switch                     */
         }
-        puts("----------------------\n");
+        
     }
     OS_EXIT_CRITICAL();
 }

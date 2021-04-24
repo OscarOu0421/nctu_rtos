@@ -29,6 +29,7 @@
 
 OS_STK        TaskStk[N_TASKS][TASK_STK_SIZE];        /* Tasks stacks                                  */
 OS_TCB        *ptcb;
+int             i;
 
 /*
 *********************************************************************************************************
@@ -96,7 +97,9 @@ void  Task1 (void *pdata)
                 PC_DOSReturn();                            /* Return to DOS                            */
             }
         }
-        // Print();
+        OS_ENTER_CRITICAL();
+        Print();
+        OS_EXIT_CRITICAL();
 
         start = OSTimeGet();
         while(OSTCBCur->compTime>0){}
@@ -104,7 +107,7 @@ void  Task1 (void *pdata)
         OS_ENTER_CRITICAL();
         end = OSTimeGet();
         toDelay = (OSTCBCur->period) - (end-arrive);
-        printf("Task1: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        // printf("Task1: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
         arrive += OSTCBCur->period;
 
 
@@ -135,7 +138,7 @@ void  Task2 (void *pdata)
         OS_ENTER_CRITICAL();
         end = OSTimeGet();
         toDelay = (OSTCBCur->period) - (end-arrive);
-        printf("Task2: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        // printf("Task2: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
         arrive += OSTCBCur->period;
 
         OSTCBCur->compTime = 3;
@@ -165,7 +168,7 @@ void  Task3 (void *pdata)
         OS_ENTER_CRITICAL();
         end = OSTimeGet();
         toDelay = (OSTCBCur->period) - (end-arrive);
-        printf("Task3: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
+        // printf("Task3: arrive:%d\tstart:%d\tend:%d\tdelay:%d\n", arrive, start, end, toDelay);
         arrive += OSTCBCur->period;
 
         OSTCBCur->compTime = 3;
@@ -179,19 +182,41 @@ void  Task3 (void *pdata)
     }
 }
 void Print(void){
-    printf("%s", OSTCBCur->buf);
+    if(print_pos<pos){
+        for(i=print_pos; i<pos; i++){
+            printf("%d\t", buf[i][0]);
+            if(buf[i][1]==0)    printf("Preempt\t");
+            else                printf("Complete\t");
+            printf("%d\t%d\n", buf[i][2], buf[i][3]);
+        }
+    }
+    else{
+        for(i=print_pos; i<row_size; i++){
+            printf("%d\t", buf[i][0]);
+            if(buf[i][1]==0)    printf("Preempt\t");
+            else                printf("Complete\t");
+            printf("%d\t%d\n", buf[i][2], buf[i][3]);
+        }
+        for(i=0; i<pos; i++){
+            printf("%d\t", buf[i][0]);
+            if(buf[i][1]==0)    printf("Preempt\t");
+            else                printf("Complete\t");
+            printf("%d\t%d\n", buf[i][2], buf[i][3]);
+        }
+    }
+    print_pos = pos;
 }
 void ArgumentSet(void){
     ptcb = OSTCBList;
     while(ptcb->OSTCBPrio==1 || ptcb->OSTCBPrio==2 || ptcb->OSTCBPrio==3){
-        printf("Priority: %d set argument\n", ptcb->OSTCBPrio);
+        // printf("Priority: %d set argument\n", ptcb->OSTCBPrio);
         if(ptcb->OSTCBPrio==1){
             ptcb->compTime = 1;
-            ptcb->period = 4;
-            ptcb->deadline = 4;
+            ptcb->period = 3;
+            ptcb->deadline = 3;
         }
         else if(ptcb->OSTCBPrio==2){
-            ptcb->compTime = 2;
+            ptcb->compTime = 3;
             ptcb->period = 5;
             ptcb->deadline = 5;
         }
@@ -202,4 +227,11 @@ void ArgumentSet(void){
         }
         ptcb = ptcb->OSTCBNext;
     }
+    row_size = 5;
+    col_size = 4;
+    pos = 0;
+    print_pos = 0;
+    buf = (int**)malloc(sizeof(int*)*row_size);
+    for(i=0; i<row_size; i++)
+        buf[i] = (int*)malloc(sizeof(int)*col_size);
 }

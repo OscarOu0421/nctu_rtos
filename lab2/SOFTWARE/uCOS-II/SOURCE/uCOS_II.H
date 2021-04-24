@@ -411,7 +411,6 @@ typedef struct os_tcb {
     
     int compTime;
     int period;
-    char buf[50];
     int deadline;
 } OS_TCB;
 
@@ -421,6 +420,13 @@ typedef struct os_tcb {
 *                                            GLOBAL VARIABLES
 *********************************************************************************************************
 */
+
+/*  Usr define  */
+OS_EXT int **buf;
+OS_EXT int pos;
+OS_EXT int print_pos;
+OS_EXT int row_size;
+OS_EXT int col_size;
 
 OS_EXT  INT32U            OSCtxSwCtr;               /* Counter of number of context switches           */
 
