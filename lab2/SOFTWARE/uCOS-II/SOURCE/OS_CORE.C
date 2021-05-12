@@ -427,7 +427,7 @@ void  OSTimeTick (void)
         while (ptcb->OSTCBPrio != OS_IDLE_PRIO) {          /* Go through all TCBs in TCB list          */
             OS_ENTER_CRITICAL();
 
-            if(ptcb==OSTCBHighRdy && ptcb->compTime!=0)    /* Decrement computation time               */
+            if(ptcb==OSTCBCur && ptcb->compTime!=0)    /* Decrement computation time               */
                 ptcb->compTime--;
 
             if (ptcb->OSTCBDly != 0) {                     /* Delayed or waiting for event with TO     */
