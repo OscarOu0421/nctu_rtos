@@ -6,7 +6,7 @@
  02A02H 02AD7H 000D6H OS_CPU_A_TEXT      CODE
  02AD8H 02CADH 001D6H OS_CPU_C_TEXT      CODE
  02CAEH 0302AH 0037DH PC_TEXT            CODE
- 0302BH 06943H 03919H UCOS_II_TEXT       CODE
+ 0302BH 06948H 0391EH UCOS_II_TEXT       CODE
  06950H 06950H 00000H _FARDATA           FAR_DATA
  06950H 06950H 00000H _FARBSS            FAR_BSS
  06950H 06950H 00000H _OVERLAY_          OVRINFO
@@ -78,7 +78,7 @@ Detailed map of segments
  02A0:0002 00D6 C=CODE   S=OS_CPU_A_TEXT  G=(none)  M=\SOFTWARE\uCOS-II\Ix86L\BC45\OS_CPU_A.ASM ACBP=48
  02AD:0008 01D6 C=CODE   S=OS_CPU_C_TEXT  G=(none)  M=os_cpu_c.c ACBP=28
  02CA:000E 037D C=CODE   S=PC_TEXT        G=(none)  M=pc.c       ACBP=28
- 0302:000B 3919 C=CODE   S=UCOS_II_TEXT   G=(none)  M=ucos_ii.c  ACBP=28
+ 0302:000B 391E C=CODE   S=UCOS_II_TEXT   G=(none)  M=ucos_ii.c  ACBP=28
  0695:0000 0000 C=FAR_DATA S=_FARDATA       G=(none)  M=c0.ASM     ACBP=68
  0695:0000 0000 C=FAR_BSS S=_FARBSS        G=(none)  M=c0.ASM     ACBP=68
  0695:0000 0000 C=OVRINFO S=_OVERLAY_      G=(none)  M=c0.ASM     ACBP=68
@@ -241,13 +241,13 @@ Detailed map of segments
  0695:1D2C idle  _OSCtxSwCtr
  0695:1D28 idle  _OSEventFreeList
  0695:1D14 idle  _OSEventTbl
- 0302:0A67 idle  _OSFlagAccept
- 0302:0B99 idle  _OSFlagCreate
- 0302:0C11 idle  _OSFlagDel
+ 0302:0A6C idle  _OSFlagAccept
+ 0302:0B9E idle  _OSFlagCreate
+ 0302:0C16 idle  _OSFlagDel
  0695:1CED idle  _OSFlagFreeList
- 0302:0D53 idle  _OSFlagPend
- 0302:0FAD idle  _OSFlagPost
- 0302:114D idle  _OSFlagQuery
+ 0302:0D58 idle  _OSFlagPend
+ 0302:0FB2 idle  _OSFlagPost
+ 0302:1152 idle  _OSFlagQuery
  0695:1CF1 idle  _OSFlagTbl
  0695:18D5 idle  _OSIdleCtr
  0695:1CE8 idle  _OSIdleCtrMax
@@ -262,71 +262,71 @@ Detailed map of segments
  0695:18E2       _OSIntNesting
  0695:18E0 idle  _OSLockNesting
  0695:0102 idle  _OSMapTbl
- 0302:13DD idle  _OSMboxAccept
- 0302:1428 idle  _OSMboxCreate
- 0302:149D idle  _OSMboxDel
- 0302:15BB idle  _OSMboxPend
- 0302:16BD idle  _OSMboxPost
- 0302:1735 idle  _OSMboxPostOpt
- 0302:17D8 idle  _OSMboxQuery
- 0302:1866 idle  _OSMemCreate
+ 0302:13E2 idle  _OSMboxAccept
+ 0302:142D idle  _OSMboxCreate
+ 0302:14A2 idle  _OSMboxDel
+ 0302:15C0 idle  _OSMboxPend
+ 0302:16C2 idle  _OSMboxPost
+ 0302:173A idle  _OSMboxPostOpt
+ 0302:17DD idle  _OSMboxQuery
+ 0302:186B idle  _OSMemCreate
  0695:11C2 idle  _OSMemFreeList
- 0302:19B1 idle  _OSMemGet
- 0302:1A2F idle  _OSMemPut
- 0302:1A9F idle  _OSMemQuery
+ 0302:19B6 idle  _OSMemGet
+ 0302:1A34 idle  _OSMemPut
+ 0302:1AA4 idle  _OSMemQuery
  0695:115E idle  _OSMemTbl
- 0302:1BEC idle  _OSMutexAccept
- 0302:1C77 idle  _OSMutexCreate
- 0302:1D5D idle  _OSMutexDel
- 0302:1EB7 idle  _OSMutexPend
- 0302:20A2 idle  _OSMutexPost
- 0302:222A idle  _OSMutexQuery
+ 0302:1BF1 idle  _OSMutexAccept
+ 0302:1C7C idle  _OSMutexCreate
+ 0302:1D62 idle  _OSMutexDel
+ 0302:1EBC idle  _OSMutexPend
+ 0302:20A7 idle  _OSMutexPost
+ 0302:222F idle  _OSMutexQuery
  0695:18DF       _OSPrioCur
  0695:18DE       _OSPrioHighRdy
- 0302:22DF idle  _OSQAccept
- 0302:237F idle  _OSQCreate
- 0302:24A2 idle  _OSQDel
- 0302:261F idle  _OSQFlush
+ 0302:22E4 idle  _OSQAccept
+ 0302:2384 idle  _OSQCreate
+ 0302:24A7 idle  _OSQDel
+ 0302:2624 idle  _OSQFlush
  0695:115A idle  _OSQFreeList
- 0302:2677 idle  _OSQPend
- 0302:27BD idle  _OSQPost
- 0302:2885 idle  _OSQPostFront
- 0302:2947 idle  _OSQPostOpt
- 0302:2A85 idle  _OSQQuery
+ 0302:267C idle  _OSQPend
+ 0302:27C2 idle  _OSQPost
+ 0302:288A idle  _OSQPostFront
+ 0302:294C idle  _OSQPostOpt
+ 0302:2A8A idle  _OSQQuery
  0695:112A idle  _OSQTbl
  0695:18DD idle  _OSRdyGrp
  0695:18DB idle  _OSRdyTbl
  0695:18DA       _OSRunning
  0302:015A idle  _OSSchedLock
  0302:0170 idle  _OSSchedUnlock
- 0302:2BAA idle  _OSSemAccept
- 0302:2BDC idle  _OSSemCreate
- 0302:2C50 idle  _OSSemDel
- 0302:2D6E idle  _OSSemPend
- 0302:2E1E idle  _OSSemPost
- 0302:2E78 idle  _OSSemQuery
+ 0302:2BAF idle  _OSSemAccept
+ 0302:2BE1 idle  _OSSemCreate
+ 0302:2C55 idle  _OSSemDel
+ 0302:2D73 idle  _OSSemPend
+ 0302:2E23 idle  _OSSemPost
+ 0302:2E7D idle  _OSSemQuery
  0302:019D       _OSStart
  02A0:0002       _OSStartHighRdy
- 0302:0275 idle  _OSStatInit
+ 0302:027A idle  _OSStatInit
  0695:1CE3 idle  _OSStatRdy
- 0302:2EFE idle  _OSTaskChangePrio
- 0302:30CA       _OSTaskCreate
- 0302:3187 idle  _OSTaskCreateExt
+ 0302:2F03 idle  _OSTaskChangePrio
+ 0302:30CF       _OSTaskCreate
+ 0302:318C idle  _OSTaskCreateExt
  02AD:000A       _OSTaskCreateHook
  0695:18D9 idle  _OSTaskCtr
- 0302:3277 idle  _OSTaskDel
+ 0302:327C idle  _OSTaskDel
  02AD:000F       _OSTaskDelHook
- 0302:3456 idle  _OSTaskDelReq
+ 0302:345B idle  _OSTaskDelReq
  02AD:0014       _OSTaskIdleHook
  0695:14D5 idle  _OSTaskIdleStk
- 0302:36D4 idle  _OSTaskQuery
- 0302:34C2 idle  _OSTaskResume
+ 0302:36D9 idle  _OSTaskQuery
+ 0302:34C7 idle  _OSTaskResume
  02AD:0015       _OSTaskStatHook
  0695:18E3 idle  _OSTaskStatStk
- 0302:3541 idle  _OSTaskStkChk
+ 0302:3546 idle  _OSTaskStkChk
  02AD:0016       _OSTaskStkInit
  02AD:00FC idle  _OSTaskStkInit_FPE_x86
- 0302:3626 idle  _OSTaskSuspend
+ 0302:362B idle  _OSTaskSuspend
  02AD:01D7       _OSTaskSwHook
  0695:14D1       _OSTCBCur
  0695:14CD idle  _OSTCBFreeList
@@ -338,28 +338,28 @@ Detailed map of segments
  0695:1108       _OSTickDOSCtr
  02A0:0088       _OSTickISR
  0695:1126 idle  _OSTime
- 0302:3742       _OSTimeDly
- 0302:3789 idle  _OSTimeDlyHMSM
- 0302:3878 idle  _OSTimeDlyResume
- 0302:38F0       _OSTimeGet
- 0302:390F idle  _OSTimeSet
- 0302:02B0       _OSTimeTick
+ 0302:3747       _OSTimeDly
+ 0302:378E idle  _OSTimeDlyHMSM
+ 0302:387D idle  _OSTimeDlyResume
+ 0302:38F5       _OSTimeGet
+ 0302:3914 idle  _OSTimeSet
+ 0302:02B5       _OSTimeTick
  02AD:01DD       _OSTimeTickHook
  0695:010A idle  _OSUnMapTbl
- 0302:0361 idle  _OSVersion
- 0302:0365 idle  _OS_Dummy
- 0302:0366 idle  _OS_EventTaskRdy
- 0302:0430 idle  _OS_EventTaskWait
- 0302:049D idle  _OS_EventTO
- 0302:04F1 idle  _OS_EventWaitListInit
- 0302:126F idle  _OS_FlagInit
- 0302:132E idle  _OS_FlagUnlink
- 0302:1B48 idle  _OS_MemInit
- 0302:2B5A idle  _OS_QInit
- 0302:06EB idle  _OS_Sched
- 0302:07E3 idle  _OS_TaskIdle
- 0302:0808 idle  _OS_TaskStat
- 0302:08D4 idle  _OS_TCBInit
+ 0302:0366 idle  _OSVersion
+ 0302:036A idle  _OS_Dummy
+ 0302:036B idle  _OS_EventTaskRdy
+ 0302:0435 idle  _OS_EventTaskWait
+ 0302:04A2 idle  _OS_EventTO
+ 0302:04F6 idle  _OS_EventWaitListInit
+ 0302:1274 idle  _OS_FlagInit
+ 0302:1333 idle  _OS_FlagUnlink
+ 0302:1B4D idle  _OS_MemInit
+ 0302:2B5F idle  _OS_QInit
+ 0302:06F0 idle  _OS_Sched
+ 0302:07E8 idle  _OS_TaskIdle
+ 0302:080D idle  _OS_TaskStat
+ 0302:08D9 idle  _OS_TCBInit
  02CA:000E idle  _PC_DispChar
  02CA:004C idle  _PC_DispClrCol
  02CA:0092 idle  _PC_DispClrRow
@@ -627,74 +627,74 @@ Detailed map of segments
  0302:015A idle  _OSSchedLock
  0302:0170 idle  _OSSchedUnlock
  0302:019D       _OSStart
- 0302:0275 idle  _OSStatInit
- 0302:02B0       _OSTimeTick
- 0302:0361 idle  _OSVersion
- 0302:0365 idle  _OS_Dummy
- 0302:0366 idle  _OS_EventTaskRdy
- 0302:0430 idle  _OS_EventTaskWait
- 0302:049D idle  _OS_EventTO
- 0302:04F1 idle  _OS_EventWaitListInit
- 0302:06EB idle  _OS_Sched
- 0302:07E3 idle  _OS_TaskIdle
- 0302:0808 idle  _OS_TaskStat
- 0302:08D4 idle  _OS_TCBInit
- 0302:0A67 idle  _OSFlagAccept
- 0302:0B99 idle  _OSFlagCreate
- 0302:0C11 idle  _OSFlagDel
- 0302:0D53 idle  _OSFlagPend
- 0302:0FAD idle  _OSFlagPost
- 0302:114D idle  _OSFlagQuery
- 0302:126F idle  _OS_FlagInit
- 0302:132E idle  _OS_FlagUnlink
- 0302:13DD idle  _OSMboxAccept
- 0302:1428 idle  _OSMboxCreate
- 0302:149D idle  _OSMboxDel
- 0302:15BB idle  _OSMboxPend
- 0302:16BD idle  _OSMboxPost
- 0302:1735 idle  _OSMboxPostOpt
- 0302:17D8 idle  _OSMboxQuery
- 0302:1866 idle  _OSMemCreate
- 0302:19B1 idle  _OSMemGet
- 0302:1A2F idle  _OSMemPut
- 0302:1A9F idle  _OSMemQuery
- 0302:1B48 idle  _OS_MemInit
- 0302:1BEC idle  _OSMutexAccept
- 0302:1C77 idle  _OSMutexCreate
- 0302:1D5D idle  _OSMutexDel
- 0302:1EB7 idle  _OSMutexPend
- 0302:20A2 idle  _OSMutexPost
- 0302:222A idle  _OSMutexQuery
- 0302:22DF idle  _OSQAccept
- 0302:237F idle  _OSQCreate
- 0302:24A2 idle  _OSQDel
- 0302:261F idle  _OSQFlush
- 0302:2677 idle  _OSQPend
- 0302:27BD idle  _OSQPost
- 0302:2885 idle  _OSQPostFront
- 0302:2947 idle  _OSQPostOpt
- 0302:2A85 idle  _OSQQuery
- 0302:2B5A idle  _OS_QInit
- 0302:2BAA idle  _OSSemAccept
- 0302:2BDC idle  _OSSemCreate
- 0302:2C50 idle  _OSSemDel
- 0302:2D6E idle  _OSSemPend
- 0302:2E1E idle  _OSSemPost
- 0302:2E78 idle  _OSSemQuery
- 0302:2EFE idle  _OSTaskChangePrio
- 0302:30CA       _OSTaskCreate
- 0302:3187 idle  _OSTaskCreateExt
- 0302:3277 idle  _OSTaskDel
- 0302:3456 idle  _OSTaskDelReq
- 0302:34C2 idle  _OSTaskResume
- 0302:3541 idle  _OSTaskStkChk
- 0302:3626 idle  _OSTaskSuspend
- 0302:36D4 idle  _OSTaskQuery
- 0302:3742       _OSTimeDly
- 0302:3789 idle  _OSTimeDlyHMSM
- 0302:3878 idle  _OSTimeDlyResume
- 0302:38F0       _OSTimeGet
- 0302:390F idle  _OSTimeSet
+ 0302:027A idle  _OSStatInit
+ 0302:02B5       _OSTimeTick
+ 0302:0366 idle  _OSVersion
+ 0302:036A idle  _OS_Dummy
+ 0302:036B idle  _OS_EventTaskRdy
+ 0302:0435 idle  _OS_EventTaskWait
+ 0302:04A2 idle  _OS_EventTO
+ 0302:04F6 idle  _OS_EventWaitListInit
+ 0302:06F0 idle  _OS_Sched
+ 0302:07E8 idle  _OS_TaskIdle
+ 0302:080D idle  _OS_TaskStat
+ 0302:08D9 idle  _OS_TCBInit
+ 0302:0A6C idle  _OSFlagAccept
+ 0302:0B9E idle  _OSFlagCreate
+ 0302:0C16 idle  _OSFlagDel
+ 0302:0D58 idle  _OSFlagPend
+ 0302:0FB2 idle  _OSFlagPost
+ 0302:1152 idle  _OSFlagQuery
+ 0302:1274 idle  _OS_FlagInit
+ 0302:1333 idle  _OS_FlagUnlink
+ 0302:13E2 idle  _OSMboxAccept
+ 0302:142D idle  _OSMboxCreate
+ 0302:14A2 idle  _OSMboxDel
+ 0302:15C0 idle  _OSMboxPend
+ 0302:16C2 idle  _OSMboxPost
+ 0302:173A idle  _OSMboxPostOpt
+ 0302:17DD idle  _OSMboxQuery
+ 0302:186B idle  _OSMemCreate
+ 0302:19B6 idle  _OSMemGet
+ 0302:1A34 idle  _OSMemPut
+ 0302:1AA4 idle  _OSMemQuery
+ 0302:1B4D idle  _OS_MemInit
+ 0302:1BF1 idle  _OSMutexAccept
+ 0302:1C7C idle  _OSMutexCreate
+ 0302:1D62 idle  _OSMutexDel
+ 0302:1EBC idle  _OSMutexPend
+ 0302:20A7 idle  _OSMutexPost
+ 0302:222F idle  _OSMutexQuery
+ 0302:22E4 idle  _OSQAccept
+ 0302:2384 idle  _OSQCreate
+ 0302:24A7 idle  _OSQDel
+ 0302:2624 idle  _OSQFlush
+ 0302:267C idle  _OSQPend
+ 0302:27C2 idle  _OSQPost
+ 0302:288A idle  _OSQPostFront
+ 0302:294C idle  _OSQPostOpt
+ 0302:2A8A idle  _OSQQuery
+ 0302:2B5F idle  _OS_QInit
+ 0302:2BAF idle  _OSSemAccept
+ 0302:2BE1 idle  _OSSemCreate
+ 0302:2C55 idle  _OSSemDel
+ 0302:2D73 idle  _OSSemPend
+ 0302:2E23 idle  _OSSemPost
+ 0302:2E7D idle  _OSSemQuery
+ 0302:2F03 idle  _OSTaskChangePrio
+ 0302:30CF       _OSTaskCreate
+ 0302:318C idle  _OSTaskCreateExt
+ 0302:327C idle  _OSTaskDel
+ 0302:345B idle  _OSTaskDelReq
+ 0302:34C7 idle  _OSTaskResume
+ 0302:3546 idle  _OSTaskStkChk
+ 0302:362B idle  _OSTaskSuspend
+ 0302:36D9 idle  _OSTaskQuery
+ 0302:3747       _OSTimeDly
+ 0302:378E idle  _OSTimeDlyHMSM
+ 0302:387D idle  _OSTimeDlyResume
+ 0302:38F5       _OSTimeGet
+ 0302:3914 idle  _OSTimeSet
  0695:0000 idle  DATASEG@
  0695:005B idle  __Int0Vector
  0695:005F idle  __Int4Vector
