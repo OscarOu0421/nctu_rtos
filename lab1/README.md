@@ -12,3 +12,6 @@
   - Tasks all arrive at the same time
   - Show context switch behaviors
   - Show deadline violations if there is any
+
+## Modify List
+- lab1/SOFTWARE/uCOS-II/SOURCE/OS_CORE.C
